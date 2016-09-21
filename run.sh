@@ -77,6 +77,7 @@ if [[ ! -d $VOLUME_HOME/mysql ]]; then
 else
     echo "=> Using an existing volume of MySQL"
 fi
+sleep 5
 /etc/init.d/mysql start && \
 	cd /var/www/html && \
 	drupal site:install standard \
