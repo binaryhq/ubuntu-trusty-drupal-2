@@ -78,6 +78,7 @@ else
     echo "=> Using an existing volume of MySQL"
 fi
 sleep 5
+/etc/init.d/apache2 start && \
 /etc/init.d/mysql start && \
 	cd /var/www/html && \
 	drupal site:install standard \
