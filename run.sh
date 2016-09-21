@@ -77,10 +77,11 @@ if [[ ! -d $VOLUME_HOME/mysql ]]; then
 else
     echo "=> Using an existing volume of MySQL"
 fi
-sleep 5
-/etc/init.d/apache2 start && \
-/etc/init.d/mysql start && \
-	cd /var/www/html && \
+/etc/init.d/apache2 start && /etc/init.d/mysql start 
+echo "Waiting--1"
+sleep 3
+echo "Waiting--3 done"
+cd /var/www/html && \
 	drupal site:install standard \
 		--langcode en \
 		--site-name="Drupal 8" \
